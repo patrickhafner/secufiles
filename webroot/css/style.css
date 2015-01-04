@@ -1,0 +1,114 @@
+div.navbar-header {
+
+}
+
+body {
+}
+
+div.secufiles div.form-inline, div.secufiles div.form-group {
+    width: 100%;
+}
+
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    margin-left: -50px !important;  /* 50% of your logo width */
+    display: block;
+}
+
+@media(min-width:768px) {
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+}
+
+@media (max-width: 767px) {
+    .navbar-nav {
+        margin: 0;
+    }
+
+    .navbar-nav input {
+        margin-left: 0 !important;
+    }
+
+    .navbar-nav > li > a:hover {
+        background: transparent;
+    }
+
+    .nav>li>a>img {
+        margin: 0 auto;
+    }
+}
+nav.navbar div.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div#content {
+    margin-top: 70px;
+}
+
+.navbar-masthead .navbar-brand {
+    padding: 13px 0;
+}
+
+footer {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    margin-top: 20px;
+    color: #777;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+
+div.img-frame {
+
+}
+
+div.img-frame img {
+    width: 100%;
+}
+
+img.icon-small {
+    width: 30px;
+}
+
+.navbar-nav{
+    width: 100%;
+    padding: 0;
+    text-shadow: 0 1px 0 rgba(0,0,0,.1);
+    background-color: #2d87e2;
+    background-image: -webkit-linear-gradient(top, #1b6ec1 0%, #2d87e2 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1b6ec1), to(#2d87e2));
+    background-image: -o-linear-gradient(top, #1b6ec1 0%, #2d87e2 100%);
+    background-image: linear-gradient(to bottom, #1b6ec1 0%, #2d87e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1b6ec1', endColorstr='#2d87e2', GradientType=0);
+    background-repeat: repeat-x;
+}
+
+
+.navbar-nav > li > a {
+    padding-top:0;
+    padding-bottom: 0;
+    padding: 5px;
+}
+
+
+.navbar-nav input {
+
+    margin-top: 5px;
+    margin-left: 5px;
+    line-height: 18px;
+
+}
+
+.navbar-nav small {
+    color: #ffffff;
+    line-height: 40px;
+    margin-right: 5px;
+}
+.navbar-nav { min-height:22px; border-radius:0}
+.navbar-nav > li > a { line-height: 16px }

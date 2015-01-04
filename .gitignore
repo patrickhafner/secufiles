@@ -1,0 +1,12 @@
+.idea/*
+secufiles.php
+composer.*
+.bowerrc
+bower_components/*
+*.crt
+*.csr
+*.key
+db/*
+!db/empty
+Vendor/composer/*
+webroot/files/*
