@@ -90,7 +90,7 @@
 
     <footer>
         <p>open source by <a href="mailto:dev@patrickhafner.de?Subject=Hi Pat!">patrick hafner<a></p>
-        <a href="https://github.com/patrickhafner/" target="_blank">
+        <a href="https://github.com/patrickhafner/secufiles/" target="_blank">
             <small>share and collaborate on github :)</small><br/><br/>
             <?php echo $this->Html->image('github.png', ['class' => 'icon-small']); ?>
         </a>
