@@ -8,6 +8,7 @@ based on cakephp 2.6, jquery 2.x, bootstrap 3.x
 
 ----
 installation
+* clone this repo into your website root (this repository is the app/ dir of cakephp)
 * if needed install php5-sqlite and php5-mcrypt
 * copy Config/secufiles.default.php to Config/secufiles.php
 * change security key
@@ -20,7 +21,7 @@ installation
 
 ---
 features:
-* text and images are hashed with rijndael
+* text and images are encrypted with rijndael
 * sqlite powered, no MySQL db needed
 * images are on filesystem, encrypted (!)
 * data will be removed from fs and database after expiration
