@@ -13,7 +13,7 @@ installation:
 * copy Config/secufiles.default.php to Config/secufiles.php
 * change security key
 * open webroot/index.php and change cakephp library path to your needs
-* run `Console/cake schema create` for creating the database
+* run `cake schema create` for creating the database
 * maybe fix permissions for webroot/files/
 * open your virtual host (etc.) to start
 * for best security, use a (self signed) ssl-certificate
@@ -22,7 +22,7 @@ installation:
 ---
 update:
 * update your app folder regularly with git pull, ...
-* run `Console/cake schema update` to receive the latest updates for the database. (or just delete the old db)
+* run `cake schema update` to receive the latest updates for the database. (or just delete the old db)
 * update your Config/secufiles.php file. Check the default config for new values.
 * check permissions
 
