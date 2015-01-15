@@ -22,7 +22,8 @@ installation:
 ---
 update:
 * update your app folder regularly with git pull, ...
-* run `Console/cake schema update` to receive the latest updates for the database.
+* run `Console/cake schema update` to receive the latest updates for the database. (or just delete the old db)
+* update your Config/secufiles.php file. Check the default config for new values.
 * check permissions
 
 ---
