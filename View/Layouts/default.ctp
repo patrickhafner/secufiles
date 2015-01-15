@@ -29,6 +29,8 @@
         'jquery.min',
         'bootstrap.min',
         'bootstrap.file-input.min',
+        'jstorage.min',
+        'secufiles',
         'jquery.load'
     ] );
 
@@ -36,6 +38,11 @@
     echo $this->fetch( 'css' );
     echo $this->fetch( 'script' );
     ?>
+
+    <script type="text/javascript">
+        Secufiles.baseURL = '<?= Router::url('/', true); ?>';
+    </script>
+
 </head>
 
 <!--[if lt IE 9]>
@@ -47,30 +54,14 @@
 <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
     <div class="container">
         <div class="col-lg-12">
-        <div class="navbar-header">
-            <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>-->
-            <?php echo $this->Html->link('secufiles', '/', ['class' => 'navbar-brand']); ?>
+            <div class="navbar-header">
+
+                <?php echo $this->Html->link( 'secufiles', '/', [ 'class' => 'navbar-brand' ] ); ?>
+
+                <?php echo $this->Html->link( $this->Html->image( 'list.png' ), [ 'controller' => 'secufiles', 'action' => 'showList' ], [ 'class' => 'navbar-icon', 'escape' => false ] ); ?>
+            </div>
+
         </div>
-        <!--<div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
-        </div>
-        </div>
-        <!--/.navbar-collapse -->
-    </div>
 </nav>
 
 
@@ -89,14 +80,20 @@
     </div>
 
     <footer>
-        <p>open source by <a href="mailto:dev@patrickhafner.de?Subject=Hi Pat!">patrick hafner<a></p>
-        <a href="https://github.com/patrickhafner/secufiles/" target="_blank">
-            <small>share and collaborate on github :)</small><br/><br/>
-            <?php echo $this->Html->image('github.png', ['class' => 'icon-small']); ?>
-        </a>
-        <a href="http://cakephp.org/" target="_blank">
-            <?php echo $this->Html->image('cake-logo.png', ['class' => 'icon-small']); ?>
-        </a>
+        <p>open source by <a href="mailto:dev@patrickhafner.de?Subject=Hi Pat!">patrick hafner</a></p>
+        <?php if (Configure::read( 'secufiles.config' )['showVersionInFooter']): ?>
+        <small class="grey">Version <?php echo Configure::read( 'secufiles.config.Version' ); ?> | <?php endif; ?>
+            <a href="https://github.com/patrickhafner/secufiles/" target="_blank">
+                <small>share and collaborate on github :)</small>
+            </a>
+            <br/><br/>
+            <a href="https://github.com/patrickhafner/secufiles/" target="_blank">
+                <?php echo $this->Html->image( 'github.png', [ 'class' => 'icon-small' ] ); ?>
+            </a>
+
+            <a href="http://cakephp.org/" target="_blank">
+                <?php echo $this->Html->image( 'cake-logo.png', [ 'class' => 'icon-small' ] ); ?>
+            </a>
 
     </footer>
 </div>

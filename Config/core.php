@@ -219,15 +219,7 @@
 		'defaults' => 'php'
 	));
 
-/**
- * A random string used in security hashing methods.
- */
-	Configure::write('Security.salt', 'P-t*YPy9ZM&IypfkQiS-(oIUVVtOr;*_qdH/Qg5Q');
-
-/**
- * A random numeric string (digits only) used to encrypt/decrypt strings.
- */
-	Configure::write('Security.cipherSeed', '124250797717569854211409278897');
+set_time_limit(0);
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).

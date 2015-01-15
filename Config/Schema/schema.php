@@ -15,6 +15,8 @@ class AppSchema extends CakeSchema {
 		'remaining_views' => array('type' => 'integer', 'null' => false, 'default' => '1'),
 		'photo' => array('type' => 'text', 'null' => true),
 		'photo_dir' => array('type' => 'text', 'null' => true),
+		'delete_code' => array('type' => 'text', 'null' => true),
+		'created_at' => array('type' => 'text', 'null' => true),
 		'indexes' => array(
 			
 		),

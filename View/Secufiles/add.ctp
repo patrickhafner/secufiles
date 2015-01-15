@@ -19,7 +19,13 @@
 
     <hr/>
 
-    <?php echo $this->Form->submit( __( 'Create secret file' ), [ 'class' => 'btn-default, btn btn-success btn-lg btn-block' ] );
+    <?php
+    echo $this->Form->input( 'Secufile.remaining_views', [ 'type' => 'number', 'pattern' => '\d*', 'label' => __( 'Views until destruction' ), 'value' => '1', 'min' => '1', 'step' => '2' ] );
+    ?>
+
+    <hr/>
+
+    <?php echo $this->Form->submit( __( 'Create secret file' ), [ 'class' => 'btn-default btn btn-success btn-lg btn-block' ] );
     $this->Form->end();
     ?>
 </div>

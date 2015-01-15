@@ -1,81 +1,85 @@
 <?php
-App::uses('AppModel', 'Model');
+App::uses( 'AppModel', 'Model' );
+
 /**
  * Secufile Model
  *
  */
 class Secufile extends AppModel {
 
-/**
- * Display field
- *
- * @var string
- */
-	public $displayField = 'hash';
+    /**
+     * Display field
+     *
+     * @var string
+     */
+    public $displayField = 'hash';
 
-    public $actsAs = array(
-        'Upload.Upload' => array(
+    public $actsAs = [
+        'Upload.Upload' => [
             'photo' => [
-                'path' => '{ROOT}{DS}webroot{DS}files{DS}',
+                'path'       => '{ROOT}{DS}uploads{DS}',
                 'pathMethod' => 'randomCombined',
                 /*'thumbnailSizes' => array(
                     'mid' => '1024x768'
                 ),*/
-                'fields' => array(
+                'fields'     => [
                     'dir' => 'photo_dir'
-                )
+                ]
             ]
-        )
-    );
+        ]
+    ];
 
     public $validates = [
         'photo' => [
-            'extension' => array(
-                'rule' => array(
-                    'extension', array(
+            'extension'       => [
+                'rule'    => [
+                    'extension', [
                         'jpg',
                         'jpeg',
                         'bmp',
                         'gif',
                         'png',
                         'jpg'
-                    )
-                ),
+                    ]
+                ],
                 'message' => 'File extension is not supported',
-                'on' => 'create'
-            ),
-            'mime' => array(
-                'rule' => array('mime', array(
+                'on'      => 'create'
+            ],
+            'mime'            => [
+                'rule' => [ 'mime', [
                     'image/jpeg',
                     'image/pjpeg',
                     'image/bmp',
                     'image/x-ms-bmp',
                     'image/gif',
                     'image/png'
-                )),
-                'on' => 'create'
-            ),
-            'size' => array(
-                'rule' => array('size', 6097152),
-                'on' => 'create'
-            )
+                ] ],
+                'on'   => 'create'
+            ],
+            'size'            => [
+                'rule' => [ 'size', 6097152 ],
+                'on'   => 'create'
+            ],
+            'views_remaining' => [
+                'rule' => 'numeric',
+                'on'   => 'create'
+            ]
         ],
 
 
     ];
 
 
-
-    public function beforeSave($options = array()) {
-        if(!isset($this->data['Secufile']['hash'])) {
-            $this->data['Secufile']['hash'] = $this->rand_string(12);
+    public function beforeSave( $options = [ ] ) {
+        if ( !isset( $this->data['Secufile']['hash'] ) ) {
+            $this->data['Secufile']['hash'] = $this->rand_string( 12 );
         }
-
-        if(!(isset($this->data['Secufile']['remaining_views']))){
-            $this->data['Secufile']['remaining_views'] = 1;
+        if ( !isset( $this->data['Secufile']['delete_code'] ) ) {
+            $this->data['Secufile']['delete_code'] = $this->rand_string( 20 );
         }
-
-
+        if ( !isset( $this->data['Secufile']['created_at'] ) ) {
+            $this->data['Secufile']['created_at'] = date( 'Y-m-d H:i:s' );
+        }
 
         return true;
 

@@ -10,3 +10,5 @@ db/*
 !db/empty
 Vendor/composer/*
 webroot/files/*
+tmp/logs/*
+uploads/*
